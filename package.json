@@ -1,0 +1,9 @@
+{
+  "name": "2315001628",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "priority": "node notification_app_be_folder/run_priority_inbox.js",
+    "scheduler": "node vehicle_maintenance_scheduler/run_scheduler.js"
+  }
+}
