@@ -1,0 +1,13 @@
+const { getAccessToken } = require("../logging_middleware/auth");
+const { createMaintenanceSchedule } = require("./vehicle_scheduler");
+
+async function main() {
+  const token = process.env.EVALUATION_ACCESS_TOKEN || await getAccessToken();
+  const schedule = await createMaintenanceSchedule(token);
+  console.log(JSON.stringify(schedule, null, 2));
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
